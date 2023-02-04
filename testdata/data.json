@@ -1,0 +1,51 @@
+{
+  "organizePage": {
+    "url": "http://10.15.1.204:3000/reserve",
+    "Organizer": "Ime Prezime",
+    "Birthday_Person": "Drugoime Drugoprezime",
+    "Age": "25",
+    "Date": "2024-02-15",
+    "Time": "20:30",
+    "Number_Of_People": "8",
+    "alergy": "Maybe",
+    "alergies": "Wallnuts"
+  },
+  "mindCookPage": {
+    "1": [
+      "Leto",
+      "Zima"
+    ],
+    "2": [
+      "Caj",
+      "Kafa"
+    ],
+    "3": [
+      "Belo",
+      "Crno"
+    ],
+    "4": [
+      "Slatko",
+      "Slano"
+    ],
+    "5": [
+      "Kiselo",
+      "Ljuto"
+    ],
+    "6": [
+      "Kasika",
+      "Viljuska"
+    ],
+    "7": [
+      "Duboki",
+      "Plitki"
+    ],
+    "8": [
+      "Voce",
+      "Povrce"
+    ],
+    "9": [
+      "Koktel",
+      "Pivo"
+    ]
+  }
+}
