@@ -1,8 +1,8 @@
 from basezadatak.config_zadatak import Config_zadatak
 
-driver = Config_zadatak.driver
 organizePage = Config_zadatak.organizePage
-utilZadatak = Config_zadatak.utilZadatak
+utilZadatak = organizePage.utilZadatak
+driver = organizePage.driver
 
 
 class Test_organize_page(Config_zadatak):

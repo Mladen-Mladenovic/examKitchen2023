@@ -1,7 +1,11 @@
+from basezadatak.util_zadatak import Util_zadatak
+
+
 class Organize_page:
-    # TODO: Implementiraj selenium-page-factory
-    def __init__(self, utilZadatak):
-        self.utilZadatak = utilZadatak
+    def __init__(self, driver, wait):
+        self.driver = driver
+        self.wait = wait
+        self.utilZadatak = Util_zadatak(driver, wait)
 
     #   Getters:
     def get_organizer_textbox(self):
@@ -81,12 +85,10 @@ class Organize_page:
         self.get_date_picker().clear()
         self.get_date_picker().send_keys(date)
 
-    # TODO: probaj da ovo bude pikovano, a ne send keys
     def set_time_picker(self, time):
         self.get_time_picker().clear()
         self.get_time_picker().send_keys(time)
 
-    # TODO: Neka sve klik metode provere stanje pre upotrebe, pa napravi check/uncheck metode gde treba
     def click_organize_button(self):
         self.get_organize_button().click()
 

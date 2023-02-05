@@ -5,6 +5,7 @@ import json
 
 
 class Util_zadatak:
+    """ Here is a collection of all methods that are not bound to specific page objects """
 
     def __init__(self, driver, wait):
         self.driver = driver
@@ -55,7 +56,7 @@ class Util_zadatak:
         """Takes 20:30 and returns 0830PM"""
         return datetime.strptime(time, "%H:%M").strftime("%I%M%p")
 
-    def get_elements(self, locator):
+    def get_elements_by_css(self, locator):
         """Returns a list"""
         self.wait.until(ec.visibility_of_all_elements_located((By.CSS_SELECTOR, locator)))
         return self.driver.find_elements(By.CSS_SELECTOR, locator)
@@ -70,5 +71,3 @@ class Util_zadatak:
 
     def scroll(self, v=0, h=0):
         self.driver.execute_script("window.scrollTo(" + str(h) + ", " + str(v) + ")")
-
-
