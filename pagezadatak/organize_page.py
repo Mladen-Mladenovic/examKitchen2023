@@ -1,5 +1,5 @@
 class Organize_page:
-
+    # TODO: Implementiraj selenium-page-factory
     def __init__(self, utilZadatak):
         self.utilZadatak = utilZadatak
 
@@ -24,7 +24,7 @@ class Organize_page:
 
     def get_number_of_guests_selection(self, guestNum):
         return self.utilZadatak.get_element_by_css(
-            "option[ value= '" + self.utilZadatak.parse_number_of_guests(guestNum) + "']")
+            "option[ value= '" + self.utilZadatak.format_number_of_guests(guestNum) + "']")
 
     def get_allergies_radio(self, allergies):
         match allergies.lower():
@@ -53,7 +53,7 @@ class Organize_page:
         return self.utilZadatak.get_element_by_css("#agr").text
 
     def get_date_from_modal(self):
-        return self.utilZadatak.parse_date(self.utilZadatak.get_element_by_css("#dtr").text)
+        return self.utilZadatak.format_date(self.utilZadatak.get_element_by_css("#dtr").text)
 
     def get_time_from_modal(self):
         return self.utilZadatak.get_element_by_css("#tmr").text

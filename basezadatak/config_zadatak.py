@@ -1,11 +1,11 @@
 from basezadatak.util_zadatak import Util_zadatak
 from pagezadatak.organize_page import Organize_page
+from pagezadatak.mind_cook_page import Mind_cook_page
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import json
 
 
 class Config_zadatak:
@@ -17,8 +17,4 @@ class Config_zadatak:
 
     utilZadatak = Util_zadatak(driver, wait)
     organizePage = Organize_page(utilZadatak)
-
-    @staticmethod
-    def data():
-        with open("../testdata/data.json", "r") as read_file:
-            return json.load(read_file)
+    mindCookPage = Mind_cook_page(utilZadatak)

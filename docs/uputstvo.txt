@@ -1,6 +1,6 @@
 Na adresi http://10.15.1.204:3000/ nalazi se test za automatziaciju. 
 Za pristup testu morate biti u firmi, ili imati aktiviran vpn. 
-Test se sastoji od 3 zadatka(organize, MindCook i Menu), koji su odvojeni na 3 strane. 
+Test se sastoji od 2 zadatka(organize, MindCook), koji su odvojeni na 2 strane.
 Potrudite se da uradite sto vise zadataka. 
 Kad zavrsite test, okacite ga na svoj Github, a meni posaljite link. 
 U readme.md projetka stavite koju ste tehnologiju koristili, i uputstvo kako pokrenuti testove. 

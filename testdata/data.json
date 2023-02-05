@@ -11,41 +11,24 @@
     "alergies": "Wallnuts"
   },
   "mindCookPage": {
-    "1": [
-      "Leto",
-      "Zima"
-    ],
-    "2": [
-      "Caj",
-      "Kafa"
-    ],
-    "3": [
-      "Belo",
-      "Crno"
-    ],
-    "4": [
-      "Slatko",
-      "Slano"
-    ],
-    "5": [
-      "Kiselo",
-      "Ljuto"
-    ],
-    "6": [
-      "Kasika",
-      "Viljuska"
-    ],
-    "7": [
-      "Duboki",
-      "Plitki"
-    ],
-    "8": [
-      "Voce",
-      "Povrce"
-    ],
-    "9": [
-      "Koktel",
-      "Pivo"
-    ]
+    "url": "http://10.15.1.204:3000/questionaire",
+    "pitanja": {
+      "0": "Leto ili Zima?",
+      "1": "Caj ili Kafa?",
+      "2": "Belo ili Crno",
+      "3": "Slatko ili Slano",
+      "4": "Kiselo ili Ljuto",
+      "5": "Kasika ili Viljuska",
+      "6": "Duboki ili plitki tanjir",
+      "7": "Voce ili Povrce",
+      "8": "Koktel ili Pivo"
+    },
+    "jela": {
+      "Avocado Benedict" : [0,0,0,0,0,0,0,0,1],
+      "Strawberry Sundae" : [1,1,0,0,0,0,0,0,0],
+      "Soy Salmon": [1,1,0,0,0,0,1,1,1],
+      "Culiflower Dipper": [0,1,1,1,1,1,1,0,0],
+      "Blonde": [0,1,1,1,1,1,1,1,1]
+    }
   }
 }

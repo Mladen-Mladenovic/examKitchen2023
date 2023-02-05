@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from datetime import datetime
+import json
 
 
 class Util_zadatak:
@@ -9,12 +10,13 @@ class Util_zadatak:
         self.driver = driver
         self.wait = wait
 
-    def get_element_by_css(self, by_locator):
-        self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, by_locator)))
-        return self.driver.find_element(By.CSS_SELECTOR, by_locator)
+    def get_element_by_css(self, locator):
+        self.wait.until(ec.visibility_of_element_located((By.CSS_SELECTOR, locator)))
+        return self.driver.find_element(By.CSS_SELECTOR, locator)
 
-    def parse_number_of_guests(self, guestNum, verify="no"):
-        """ Takes 8 and if verify == 'no' returns 2 or if verify == 'verify' returns 6-10 """
+    @staticmethod
+    def format_number_of_guests(guestNum, verify="no"):
+        """Takes 8 and if verify == 'no' returns 2 or if verify == 'verify' returns 6-10"""
         if verify != "no" and verify != "verify":
             raise Exception("Invalid input in pars_number_of_guests()")
         if 2 <= int(guestNum) <= 5:
@@ -43,32 +45,30 @@ class Util_zadatak:
     def get_from_local_storage(self, key):
         return self.driver.execute_script("return window.localStorage.getItem(arguments[0]);", key)
 
-    def parse_date(self, date):
-        """ Takes 2024.02.15 and returns 02152024 """
+    @staticmethod
+    def format_date(date):
+        """Takes 2024.02.15 and returns 02152024"""
         return datetime.strptime(date, "%Y-%m-%d").strftime("%m%d%Y")
 
-    def parse_time(self, time):
-        """ Takes 20:30 and returns 0830PM """
+    @staticmethod
+    def format_time(time):
+        """Takes 20:30 and returns 0830PM"""
         return datetime.strptime(time, "%H:%M").strftime("%I%M%p")
 
-    def get_element_by_xpath(self, by_locator):
-        self.wait.until(ec.visibility_of_element_located((By.XPATH, by_locator)))
-        return self.driver.find_element(By.XPATH, by_locator)
+    def get_elements(self, locator):
+        """Returns a list"""
+        self.wait.until(ec.visibility_of_all_elements_located((By.CSS_SELECTOR, locator)))
+        return self.driver.find_elements(By.CSS_SELECTOR, locator)
 
-    def do_click(self, by_locator):
-        self.wait.until(ec.visibility_of_element_located(by_locator)).click()
+    @staticmethod
+    def data():
+        with open("../testdata/data.json", "r") as read_file:
+            return json.load(read_file)
 
-    def do_send_keys(self, by_locator, text):
-        self.wait.until(ec.visibility_of_element_located(by_locator)).send_keys(text)
+    def wait_for_element_to_be_clickable(self, element):
+        self.wait.until(ec.element_to_be_clickable(element))
 
-    def get_element_text(self, by_locator):
-        element = self.wait.until(ec.visibility_of_element_located(by_locator))
-        return element.text
+    def scroll(self, v=0, h=0):
+        self.driver.execute_script("window.scrollTo(" + str(h) + ", " + str(v) + ")")
 
-    def is_enabled(self, by_locator):
-        element = self.wait.until(ec.visibility_of_element_located(by_locator))
-        return bool(element)
 
-    def get_title(self, title):
-        self.wait.until(ec.title_is(title))
-        return self.driver.title
